@@ -25,7 +25,7 @@ print("Bangalore Binary built-up image shape: ", labelBangalore.shape)
 print("Hyderabad Multispectral image shape: ", featuresHyderabad.shape)
 
 # Clean the labelled data to replace NoData values by zero
-labelBangalore = np.clip(labelBangalore, 0, 1)
+labelBangalore = (labelBangalore == 1).astype(int)
 
 # Reshape the array to single dimensional array
 featuresBangalore = changeDimension(featuresBangalore)
